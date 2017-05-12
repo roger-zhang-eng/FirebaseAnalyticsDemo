@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAnalytics
 
 class ContentViewController: UIViewController {
 
@@ -18,6 +19,16 @@ class ContentViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        let titleText = self.navigationItem.title!
+        debugPrint("ContentView title: \(titleText)")
+        
+        FIRAnalytics.logEvent(withName: "contentView", parameters: ["name": "contentView" as NSObject,
+                                                                   "full_text": "Set counter" as NSObject])
     }
 
     override func didReceiveMemoryWarning() {
