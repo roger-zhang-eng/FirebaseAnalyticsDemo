@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAnalytics
 
 class MainViewController: UIViewController {
 
@@ -21,6 +22,18 @@ class MainViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let titleText = self.navigationItem.title!
+        debugPrint("MainView title: \(titleText)")
+        
+        FIRAnalytics.logEvent(withName: kFIREventSelectContent, parameters: [
+            kFIRParameterItemID: "id-\(titleText)" as NSObject,
+            kFIRParameterItemName: titleText as NSObject,
+            kFIRParameterContentType: "cont" as NSObject
+            ])
     }
     
 
