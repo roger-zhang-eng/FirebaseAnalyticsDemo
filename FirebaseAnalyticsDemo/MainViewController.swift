@@ -10,6 +10,8 @@ import UIKit
 
 class MainViewController: UIViewController {
 
+    let ContentViewSegue = "ContentViewSegue"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

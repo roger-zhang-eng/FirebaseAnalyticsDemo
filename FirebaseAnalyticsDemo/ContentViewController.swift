@@ -10,6 +10,10 @@ import UIKit
 
 class ContentViewController: UIViewController {
 
+    let counterTemplate = "Counter value: "
+    var counter = 0
+    @IBOutlet weak var counterIndication: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +25,15 @@ class ContentViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func counterButtonClicked(_ sender: UIButton) {
+        counter = counter + 1
+        let value = counter
+        self.counterIndication.text = self.counterTemplate + String(value)
+    }
 
+    @IBAction func resetButtonClicked(_ sender: UIButton) {
+        self.counterIndication.text = "Content View"
+    }
     /*
     // MARK: - Navigation
 
