@@ -38,6 +38,11 @@ class ContentViewController: UIViewController {
     
     @IBAction func counterButtonClicked(_ sender: UIButton) {
         counter = counter + 1
+        
+        if counter == 7 {
+            fatalError()
+        }
+        
         let value = counter
         self.counterIndication.text = self.counterTemplate + String(value)
     }

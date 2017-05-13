@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseAnalytics
 
 class MainViewController: UIViewController {
@@ -36,6 +37,10 @@ class MainViewController: UIViewController {
             ])
     }
     
+    @IBAction func crashButtonClicked(_ sender: UIButton) {
+        FIRCrashMessage("Cause Crash button clicked")
+        //fatalError()
+    }
 
     /*
     // MARK: - Navigation

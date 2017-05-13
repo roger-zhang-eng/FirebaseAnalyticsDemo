@@ -7,5 +7,6 @@ target 'FirebaseAnalyticsDemo' do
 
   # Pods for FirebaseAnalyticsDemo
   pod 'Firebase/Core'
+  pod 'Firebase/Crash'
 
 end
